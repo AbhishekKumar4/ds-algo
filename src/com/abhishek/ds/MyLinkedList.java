@@ -46,6 +46,13 @@ public class MyLinkedList {
         return currentnode;
     }
 
+    public void remove(int index) {
+        Node leader = traverseToIndex(index - 1);
+        Node toRemove = leader.next;
+        leader.next= toRemove.next;
+        toRemove.next = null;
+    }
+
     public static void main(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.append(3);
@@ -53,7 +60,9 @@ public class MyLinkedList {
         myLinkedList.append(2);
 
         myLinkedList.displayContent();
-
+        myLinkedList.remove(1);
+        System.out.println("After Removal");
+        myLinkedList.displayContent();
 
     }
 
