@@ -36,6 +36,16 @@ public class MyLinkedList {
         }
     }
 
+    public Node traverseToIndex(int index) {
+        int count = 0;
+        Node currentnode = this.head;
+        while(count != index) {
+            currentnode = currentnode.next;
+            count++;
+        }
+        return currentnode;
+    }
+
     public static void main(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.append(3);
@@ -43,6 +53,8 @@ public class MyLinkedList {
         myLinkedList.append(2);
 
         myLinkedList.displayContent();
+
+
     }
 
 }
