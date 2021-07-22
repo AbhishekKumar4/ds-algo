@@ -53,15 +53,32 @@ public class MyLinkedList {
         toRemove.next = null;
     }
 
+    public void reverse() {
+        Node current = this.head;
+        Node previous = null;
+        Node next = null;
+
+        while(current != null) {
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        this.head = previous;
+    }
+
     public static void main(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.append(3);
         myLinkedList.append(7);
         myLinkedList.append(2);
+        myLinkedList.append(1);
 
         myLinkedList.displayContent();
-        myLinkedList.remove(1);
-        System.out.println("After Removal");
+
+        myLinkedList.reverse();
+
+        System.out.println("/nAfter Reversing");
         myLinkedList.displayContent();
 
     }
