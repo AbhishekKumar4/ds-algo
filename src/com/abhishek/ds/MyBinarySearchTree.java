@@ -38,4 +38,13 @@ public class MyBinarySearchTree {
             }
         }
     }
+
+    public static void main(String[] args) {
+        MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
+        myBinarySearchTree.insert(2);
+        myBinarySearchTree.insert(5);
+        myBinarySearchTree.insert(1);
+
+        System.out.println("Debug and test values");
+    }
 }

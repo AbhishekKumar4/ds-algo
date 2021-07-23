@@ -52,7 +52,7 @@ public class MyLinkedList {
         leader.next= toRemove.next;
         toRemove.next = null;
     }
-
+        // [3, 7, 2, 1]
     public void reverse() {
         Node current = this.head;
         Node previous = null;
