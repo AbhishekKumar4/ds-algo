@@ -39,6 +39,24 @@ public class MyBinarySearchTree {
         }
     }
 
+    public List breadthFirstSearch() {
+        Node currentNode = this.root;
+        List<Integer> result = new ArrayList<>();
+        Queue queue = new PriorityQueue();
+        // add first element to queue
+        queue.add(currentNode.data);
+
+        while(queue.peek() != null) {
+         Node currentNode1 = (Node) queue.poll();
+         result.add(currentNode1.data);
+         if(currentNode1.left != null) {
+             queue.add(currentNode1.left);
+         } if(currentNode1.right !=null) {
+             queue.add(currentNode1.right);
+            }
+        }
+        return result;
+    }
     public static void main(String[] args) {
         MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
         myBinarySearchTree.insert(2);
