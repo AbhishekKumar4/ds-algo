@@ -1,4 +1,4 @@
-package com.abhishek.practice.recursion;
+package com.abhishek.recursion;
 
 public class RecursiveLinearSearch {
     public int search(int[] input, int target, int start, int end) {
