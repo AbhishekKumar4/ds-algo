@@ -1,4 +1,4 @@
-package com.abhishek.practice.recursion;
+package com.abhishek.recursion;
 
 import java.util.ArrayList;
 import java.util.List;
