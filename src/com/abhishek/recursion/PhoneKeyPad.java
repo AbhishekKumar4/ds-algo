@@ -15,7 +15,12 @@ public class PhoneKeyPad {
         int num =  input.charAt(index) - '0';
         String value = mappings[num];
 
-        // TODO
+        // recursive call
+        for(int i = 0; i < value.length(); i++) {
+            output = output.concat(String.valueOf(value.charAt(i)));
+            solve(input, output, index + 1, answer, mappings);
+            output = output.substring(0, output.length() - 1);
+        }
     }
     public List<String> printOutcomes(String input) {
         List<String> answer = new ArrayList<>();
