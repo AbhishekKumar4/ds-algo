@@ -1,4 +1,4 @@
-package com.abhishek.binarysearch.practice;
+package com.abhishek.ds;
 
 public class FindPeak {
 
