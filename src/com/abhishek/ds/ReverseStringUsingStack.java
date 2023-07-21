@@ -1,4 +1,4 @@
-package com.abhishek.stacknqueues.practice;
+package com.abhishek.ds;
 
 import java.util.Stack;
 
