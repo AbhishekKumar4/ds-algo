@@ -1,5 +1,10 @@
 package com.abhishek.ds;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 public class MyBinarySearchTree {
     Node root;
     class Node {
@@ -44,6 +49,7 @@ public class MyBinarySearchTree {
         List<Integer> result = new ArrayList<>();
         Queue queue = new PriorityQueue();
         // add first element to queue
+        queue.add(currentNode.data);
         queue.add(currentNode.data);
 
         while(queue.peek() != null) {
