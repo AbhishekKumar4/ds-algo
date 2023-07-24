@@ -1,4 +1,4 @@
-package com.abhishek.ds;
+package com.abhishek.binarysearch;
 
 import java.util.ArrayList;
 import java.util.List;
