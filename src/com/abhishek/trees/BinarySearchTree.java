@@ -61,6 +61,7 @@ public class BinarySearchTree {
             if(node.left != null) {
                 queue.add(node.left);
             }
+            // right add karao
             if(node.right != null) {
                 queue.add(node.right);
             }
@@ -70,9 +71,12 @@ public class BinarySearchTree {
 
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
-        binarySearchTree.insert(10);
+        binarySearchTree.insert(1);
+        binarySearchTree.insert(3);
         binarySearchTree.insert(5);
-        binarySearchTree.insert(15);
+        binarySearchTree.insert(7);
+        binarySearchTree.insert(11);
+        binarySearchTree.insert(17);
 
         System.out.println(binarySearchTree.breadthFirstSearch());
     }
