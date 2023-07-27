@@ -1,9 +1,6 @@
 package com.abhishek.binarysearch;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class MyBinarySearchTree {
     Node root;
@@ -47,10 +44,10 @@ public class MyBinarySearchTree {
     public List breadthFirstSearch() {
         Node currentNode = this.root;
         List<Integer> result = new ArrayList<>();
-        Queue queue = new PriorityQueue();
+        LinkedList queue = new LinkedList();
         // add first element to queue
-        queue.add(currentNode.data);
-        queue.add(currentNode.data);
+        //queue.add(currentNode.data);
+        queue.add(currentNode);
 
         while(queue.peek() != null) {
          Node currentNode1 = (Node) queue.poll();
@@ -69,6 +66,7 @@ public class MyBinarySearchTree {
         myBinarySearchTree.insert(5);
         myBinarySearchTree.insert(1);
 
+        System.out.println(myBinarySearchTree.breadthFirstSearch());
         System.out.println("Debug and test values");
     }
 }
