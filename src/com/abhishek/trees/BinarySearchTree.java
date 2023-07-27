@@ -1,5 +1,9 @@
 package com.abhishek.trees;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class BinarySearchTree {
     private Node root;
     class Node {
@@ -37,5 +41,39 @@ public class BinarySearchTree {
                 }
             }
         }
+    }
+
+    // Implement Level Order Traversal // Breadth first search
+    // Implemented by using queues
+    public List breadthFirstSearch() {
+        Node currentNode =  this.root;
+        List<Integer> result =  new ArrayList<>();
+        LinkedList<Node> queue =  new LinkedList<>();
+
+        // add first element
+        queue.add(currentNode);
+
+        while(queue.peek() != null) {
+            // poll and add data
+            Node node =  queue.poll();
+            result.add(node.data);
+            // left add karao
+            if(node.left != null) {
+                queue.add(node.left);
+            }
+            if(node.right != null) {
+                queue.add(node.right);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        binarySearchTree.insert(10);
+        binarySearchTree.insert(5);
+        binarySearchTree.insert(15);
+
+        System.out.println(binarySearchTree.breadthFirstSearch());
     }
 }
