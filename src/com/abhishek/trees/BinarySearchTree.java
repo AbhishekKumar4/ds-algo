@@ -69,6 +69,21 @@ public class BinarySearchTree {
         return result;
     }
 
+
+    public void inOrderTraversal(Node node) {
+        // base case
+        if(node == null) {
+            return;
+        }
+        // LNR
+        // go left
+        inOrderTraversal(node.left);
+        // go node
+        System.out.println(node.data);
+        // go right
+        inOrderTraversal(node.right);
+    }
+
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
         binarySearchTree.insert(1);
@@ -79,5 +94,7 @@ public class BinarySearchTree {
         binarySearchTree.insert(17);
 
         System.out.println(binarySearchTree.breadthFirstSearch());
+
+        binarySearchTree.inOrderTraversal(binarySearchTree.root);
     }
 }
