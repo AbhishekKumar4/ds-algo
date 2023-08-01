@@ -86,12 +86,12 @@ public class BinarySearchTree {
 
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
-        binarySearchTree.insert(1);
-        binarySearchTree.insert(3);
+        binarySearchTree.insert(20);
+        binarySearchTree.insert(10);
+        binarySearchTree.insert(35);
         binarySearchTree.insert(5);
-        binarySearchTree.insert(7);
-        binarySearchTree.insert(11);
-        binarySearchTree.insert(17);
+        binarySearchTree.insert(15);
+
 
         System.out.println(binarySearchTree.breadthFirstSearch());
 
