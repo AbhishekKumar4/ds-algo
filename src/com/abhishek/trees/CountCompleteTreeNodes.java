@@ -1,7 +1,21 @@
 package com.abhishek.trees;
 
 public class CountCompleteTreeNodes {
-
+    public int countTreeNodes(TreeNode root) {
+        if(root == null) {
+            return 0;
+        }
+        int answer = countAllNodes(root);
+        return answer;
+    }
+    private int countAllNodes(TreeNode root) {
+        if(root == null) {
+            return 0;
+        }
+        int lh = countAllNodes(root.left);
+        int rh = countAllNodes(root.right);
+        return lh + rh + 1;
+    }
 
     public static void main(String[] args) {
 
@@ -19,6 +33,7 @@ public class CountCompleteTreeNodes {
         //4    5      6
         //
 
+        System.out.println(new CountCompleteTreeNodes().countTreeNodes(root));
 
     }
 }
