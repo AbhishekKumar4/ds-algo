@@ -9,28 +9,36 @@ public class NextGreaterElement {
         Stack<Integer> stack = new Stack();
         stack.push(-1);
 
-        HashMap<Integer, Integer> nums1Keys = new HashMap();
-        // fill values in map
-        for(int i = 0; i<= nums1.length - 1; i++) {
-            // stored value and its index
-            nums1Keys.put(nums1[i], i);
-        }
+        HashMap<Integer, Integer> nums2Keys = new HashMap();
 
-        for(int j = nums2.length - 1; j >= 0; j--) {
-            int currentValue  = nums2[j];
-            while(!stack.isEmpty() && stack.peek() < currentValue) {
+        for(int i = nums2.length - 1; i >= 0; i--) {
+            int currentValue = nums2[i];
+
+            while(stack.size() > 0 && currentValue >= stack.peek()) {
                 stack.pop();
             }
-            if(nums1Keys.containsKey(currentValue)) {
-                int indexInNums1 = nums1Keys.get(currentValue).intValue();
-                nums1[indexInNums1] = stack.peek();
-                stack.push(currentValue);
+            if(stack.size() == 0){
+                nums2[i] =  -1;
+                nums2Keys.put(currentValue, -1);
+            } else {
+                nums2[i] = stack.peek();
+                nums2Keys.put(currentValue, stack.peek());
+            }
+            stack.push(currentValue);
+        }
+
+        for(int j = 0; j<= nums1.length -1; j++) {
+            int value =  nums1[j];
+            if(nums2Keys.containsKey(value)) {
+                nums1[j] = nums2Keys.get(value);
             }
         }
         return nums1;
     }
 
     public static void main(String[] args) {
-
+        int[] num1 = {2,4};
+        int[] nums2 = {1,2,3,4};
+        System.out.println(Arrays.toString(new NextGreaterElement().nextGreaterElement(num1, nums2)));
     }
 }
