@@ -1,5 +1,6 @@
 package com.abhishek.stack;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Stack;
 
@@ -39,6 +40,6 @@ public class NextGreaterElementLeet {
     public static void main(String[] args) {
         int[] num1 = {2,4};
         int[] nums2 = {1,2,3,4};
-        System.out.println(Arrays.toString(new NextGreaterElement().nextGreaterElement(num1, nums2)));
+        System.out.println(Arrays.toString(new NextGreaterElementLeet().nextGreaterElement(num1, nums2)));
     }
 }
