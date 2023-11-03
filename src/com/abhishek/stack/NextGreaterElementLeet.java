@@ -1,9 +1,9 @@
-package com.abhishek.revision.stack;
+package com.abhishek.stack;
 
 import java.util.HashMap;
 import java.util.Stack;
 
-public class NextGreaterElement {
+public class NextGreaterElementLeet {
 
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         Stack<Integer> stack = new Stack();
