@@ -37,6 +37,12 @@ public class MyCustomLinkedList {
         currentNode.next = newNode;
     }
 
+    public void insertAtMiddle(int data) {
+        // construct a new node
+        // middle kese nikaalein // two pointer game - fast pointer and slow pointer game
+        // when fast pointer reaches end, slow will be at the middle
+    }
+
     public void printLinkedList() {
         Node currenNode =  this.head;
         while( currenNode != null) {
