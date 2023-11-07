@@ -43,6 +43,22 @@ public class MyCustomLinkedList {
         // when fast pointer reaches end, slow will be at the middle
     }
 
+    public void insertAtIndex(int index, int data) {
+        Node newNode = new Node(data, null);
+        Node currentNode =  this.head;
+        int counter = 0;
+        // last tak while loop kro
+        while(counter < index) {
+            currentNode = currentNode.next;
+            counter = counter + 1;
+        }
+
+        // yahan pe current.next null hai
+        Node temp = currentNode.next;
+        currentNode.next = newNode;
+        newNode.next =  temp;
+    }
+
     public void printLinkedList() {
         Node currenNode =  this.head;
         while( currenNode != null) {
