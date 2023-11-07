@@ -24,6 +24,19 @@ public class MyCustomLinkedList {
         }
     }
 
+    public void insertAtTail(int data) {
+        // construct a new node
+        Node newNode = new Node(data, null);
+        Node currentNode =  this.head;
+        // last tak while loop kro
+        while(currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+
+        // yahan pe current.next null hai
+        currentNode.next = newNode;
+    }
+
     public void printLinkedList() {
         Node currenNode =  this.head;
         while( currenNode != null) {
@@ -31,6 +44,7 @@ public class MyCustomLinkedList {
             currenNode = currenNode.next;
         }
     }
+    
     public static void main(String[] args) {
         MyCustomLinkedList myLinkedList = new MyCustomLinkedList();
         myLinkedList.insertAtBegining(10);
@@ -38,6 +52,9 @@ public class MyCustomLinkedList {
         myLinkedList.insertAtBegining(30);
         myLinkedList.insertAtBegining(40);
         myLinkedList.insertAtBegining(50);
+        myLinkedList.insertAtTail(60);
+        myLinkedList.insertAtTail(70);
+        myLinkedList.insertAtTail(80);
 
         myLinkedList.printLinkedList();
     }
