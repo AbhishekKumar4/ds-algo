@@ -66,6 +66,18 @@ public class MyCustomLinkedList {
             currenNode = currenNode.next;
         }
     }
+
+    public void deleteNodeFromIndex(int index) {
+        Node currentNode =  this.head;
+        int counter =  0;
+
+        // case delete from first position
+        if(index == 0) {
+            Node tempNode = this.head;
+            this.head  = tempNode.next;
+            tempNode.next =  null;
+        }
+    }
     
     public static void main(String[] args) {
         MyCustomLinkedList myLinkedList = new MyCustomLinkedList();
