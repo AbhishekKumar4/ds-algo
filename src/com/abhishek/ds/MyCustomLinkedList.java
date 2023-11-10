@@ -76,6 +76,16 @@ public class MyCustomLinkedList {
             Node tempNode = this.head;
             this.head  = tempNode.next;
             tempNode.next =  null;
+        } else {
+            // shuru me previous null hogi
+            Node previous =  null;
+            while(counter < index) {
+                previous = currentNode;
+                currentNode =  currentNode.next;
+                counter++;
+            }
+            previous.next = currentNode.next;
+            currentNode.next = null;
         }
     }
     
