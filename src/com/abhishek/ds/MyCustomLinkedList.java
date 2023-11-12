@@ -1,5 +1,8 @@
 package com.abhishek.linkedlist;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.sql.SQLOutput;
+
 public class MyCustomLinkedList {
 
     Node head;
@@ -37,10 +40,22 @@ public class MyCustomLinkedList {
         currentNode.next = newNode;
     }
 
-    public void insertAtMiddle(int data) {
+    public void printMiddle() {
         // construct a new node
         // middle kese nikaalein // two pointer game - fast pointer and slow pointer game
         // when fast pointer reaches end, slow will be at the middle
+        Node currentNode = this.head;
+        // initially both will be at start
+        Node fastPointer = currentNode;
+        Node slowPointer = currentNode;
+
+        while(fastPointer != null && fastPointer.next != null) {
+            fastPointer = fastPointer.next.next;
+            slowPointer = slowPointer.next;
+        }
+
+        // when fast reaches the end, the slow one will be at the middle
+        System.out.println("Middle element is L " + slowPointer.data);
     }
 
     public void insertAtIndex(int index, int data) {
@@ -101,5 +116,7 @@ public class MyCustomLinkedList {
         myLinkedList.insertAtTail(80);
 
         myLinkedList.printLinkedList();
+        System.out.println("=============================");
+        myLinkedList.printMiddle();
     }
 }
