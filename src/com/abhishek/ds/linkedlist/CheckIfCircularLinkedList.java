@@ -1,11 +1,13 @@
 package com.abhishek.ds;
 
+import com.abhishek.ds.linkedlist.ListNode;
+
 public class CheckIfCircularLinkedList {
 
-    boolean isCircular(Node head)
+    boolean isCircular(ListNode head)
     {
         // Your code here
-        Node headNode = head;
+        ListNode headNode = head;
         while(head.next != null) {
             if(head.next ==headNode) {
                 return true;
